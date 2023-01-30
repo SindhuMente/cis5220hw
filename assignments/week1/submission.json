@@ -2,13 +2,12 @@
     "assignment_name": "Assignment 1",
     "contributors": [
         {
-            "name": "Jordan Matelsky",
-            "pennkey": "matelsky"
+            "name": "Sindhura Mente",
+            "pennkey": "smente"
         }
     ],
     "sources": [
-        "https://example.com",
-        "Conversations with TA (include TA's name)",
-        "LLM (include information about the LLM and how it was used)"
+        "Conversations with TA (Hainiu)",
+        "Referred to my notes I took in CIS 5810 last semester"
     ]
 }
