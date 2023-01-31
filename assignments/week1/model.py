@@ -79,7 +79,7 @@ class GradientDescentLinearRegression(LinearRegression):
             # print('preds: ', preds.shape)
             # print('X.T: ', X.T.shape)
             # print('(y - preds): ', (y - preds).shape)
-            delta_w = np.clip((-2 / N) * (X.T @ (y - preds)), -10, 10)
+            delta_w = np.clip((-2 / N) * (X.T @ (y - preds)), -1, 1)
             delta_b = (-2 / N) * np.sum((y - preds), axis=0)
             self.w = self.w - (lr * delta_w)
             self.b = self.b - (lr * delta_b)
