@@ -2,8 +2,12 @@
     "assignment_name": "MLP",
     "contributors": [
         {
-            "name": "Kaya Panchalingam, Sindhura Mente",
-            "pennkey": "kayap, smente"
+            "name": "Sindhura Mente",
+            "pennkey": "smente"
+        },
+        {
+            "name": "Kaya Panchalingam",
+            "pennkey": "kayap"
         }
     ],
     "sources": [
