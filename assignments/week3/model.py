@@ -81,7 +81,6 @@ class MLP(torch.nn.Module):
         x1 = self.hidden4(x1)
         x1 = act(x)
 
-
         """
         x1 = act(x)
         for layer in self.hidden_layers:
