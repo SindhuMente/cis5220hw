@@ -38,13 +38,11 @@ class MLP(torch.nn.Module):
         self.hidden2 = torch.nn.Linear(hidden_size, hidden_size)
         self.hidden3 = torch.nn.Linear(hidden_size, hidden_size)
         self.hidden4 = torch.nn.Linear(hidden_size, hidden_size)
-        self.hidden5 = torch.nn.Linear(hidden_size, hidden_size)
 
         self.dropout1 = torch.nn.Dropout(0.5)  # 0.5
-        self.dropout2 = torch.nn.Dropout(0.4)  # 0.25
-        self.dropout3 = torch.nn.Dropout(0.3)  # 0.125
-        self.dropout4 = torch.nn.Dropout(0.2)
-        self.dropout5 = torch.nn.Dropout(0.1)
+        self.dropout2 = torch.nn.Dropout(0.3)  # 0.25
+        self.dropout3 = torch.nn.Dropout(0.15)  # 0.125
+        self.dropout4 = torch.nn.Dropout(0.1)
 
         """
         for _ in range(1, hidden_count + 1):
@@ -81,11 +79,9 @@ class MLP(torch.nn.Module):
         x1 = act(x)
 
         x1 = self.hidden4(x1)
-        x1 = self.dropout5(x1)
         x1 = act(x)
 
-        x1 = self.hidden5(x1)
-        x1 = act(x1)
+
         """
         x1 = act(x)
         for layer in self.hidden_layers:
