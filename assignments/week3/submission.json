@@ -4,9 +4,15 @@
         {
             "name": "Sindhura Mente",
             "pennkey": "smente"
+        },
+        {
+            "name": "Kaya Panchalingam",
+            "pennkey": "kayap"
         }
     ],
     "sources": [
-        "Classwork"
+        "Classwork",
+        "Prior Knowledge from previous courses",
+        "general Pytorch documentation for syntax"
     ]
 }
