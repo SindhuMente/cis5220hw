@@ -28,14 +28,23 @@ class MLP(torch.nn.Module):
         """
         super(MLP, self).__init__()
         self.layer = torch.nn.Linear(input_size, hidden_size)
-        self.hidden_layers = torch.nn.ModuleList()
+        # self.hidden_layers = torch.nn.ModuleList()
         initializer(self.layer.weight)
         self.activation = activation
         # input_dim = 32
         # self. hidden_units = [16, 8, 4]
         # A fully-connected network (FCN) with len(hidden_units) hidden layers
+        self.hidden1 = torch.nn.Linear(hidden_size, hidden_size)
+        self.hidden2 = torch.nn.Linear(hidden_size, hidden_size)
+        self.hidden3 = torch.nn.Linear(hidden_size, hidden_size)
+        self.dropout1 = torch.nn.Dropout(0.5)
+        self.dropout2 = torch.nn.Dropout(0.25)
+        self.dropout3 = torch.nn.Dropout(0.125)
+
+        """
         for _ in range(1, hidden_count + 1):
             self.hidden_layers += [torch.nn.Linear(hidden_size, hidden_size)]
+        """
 
         self.out = torch.nn.Linear(hidden_size, num_classes)
 
@@ -51,9 +60,21 @@ class MLP(torch.nn.Module):
         """
         x = self.layer(x)
         act = self.activation
+        x1 = self.dropout1(x)
+        x1 = act(x)
+        x1 = self.hidden1(x1)
+        x1 = self.dropout2(x1)
+        x1 = act(x1)
+        x1 = self.hidden2(x1)
+        x1 = self.dropout3(x1)
+        x1 = act(x1)
+        x1 = self.hidden3(x1)
+        x1 = act(x)
+        """
         x1 = act(x)
         for layer in self.hidden_layers:
             x = layer(x1)
             x1 = act(x)
+        """
         # x_out = self.layer(x1)
         return self.out(x1)
