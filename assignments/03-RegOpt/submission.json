@@ -1,8 +1,11 @@
 {
     "assignment_name": "RegOpt",
     "contributors": [
-        {"name": "Sindhura Mente", "pennkey": "smente"},
-        {"name": "Kaya Panchalingam", "pennkey": "kayap"}
+        {"name": "Sindhura Mente", 
+        "pennkey": "smente"
+    },
+        {"name": "Kaya Panchalingam", 
+        "pennkey": "kayap"}
     ],
     "sources": [
         "Classwork/Discussion",
@@ -10,3 +13,5 @@
         "https://pytorch.org/docs/stable/_modules/torch/optim/lr_scheduler.html"
     ]
 }
+
+
