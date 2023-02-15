@@ -2,11 +2,17 @@
     "assignment_name": "RegOpt",
     "contributors": [
         {
-            "name": "Change this to your name",
-            "pennkey": "MyPennKey"
+            "name": "Sindhura Mente",
+            "pennkey": "smente"
+        },
+        {
+            "name": "Kaya Panchalingam",
+            "pennkey": "kayap" 
         }
     ],
     "sources": [
-        "Don't forget to list your sources/attribution here!"
+        "Classwork/Discussion",
+        "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate",
+        "https://pytorch.org/docs/stable/_modules/torch/optim/lr_scheduler.html"
     ]
 }
