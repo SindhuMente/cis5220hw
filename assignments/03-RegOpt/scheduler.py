@@ -4,9 +4,10 @@ from torch.optim.lr_scheduler import _LRScheduler
 
 
 class CustomLRScheduler(_LRScheduler):
-    '''
+    """
     Our implentation of a scheduler
-    '''
+    """
+
     def __init__(
         self,
         optimizer,
