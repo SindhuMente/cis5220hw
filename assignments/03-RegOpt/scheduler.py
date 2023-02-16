@@ -53,7 +53,7 @@ class CustomLRScheduler(_LRScheduler):
         for i in range(1, num_lr):
             if cur_step == steps:
                 cur_step = 1
-                lrs.append(lrs[i - 1] * 0.1)
+                lrs.append(lrs[i - 1] * 1.01)
             else:
                 cur_step += 1
                 lrs.append(lrs[i - 1])
