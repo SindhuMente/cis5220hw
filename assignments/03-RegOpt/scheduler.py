@@ -45,7 +45,7 @@ class CustomLRScheduler(_LRScheduler):
         """config 1"""
         return [i + (i - 1) * 0.0001 for i in self.base_lrs]
 
-        '''Didn't work'''
+        """Didn't work"""
         # num_lr = len(self.base_lrs)
         # steps = num_lr / self.num_epochs
         # cur_step = 1
