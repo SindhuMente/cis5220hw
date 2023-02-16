@@ -43,20 +43,21 @@ class CustomLRScheduler(_LRScheduler):
         # return [i for i in self.base_lrs]
 
         """config 1"""
-        # return [i + (i - 1) * 0.0001 for i in self.base_lrs]
+        return [i + (i - 1) * 0.0001 for i in self.base_lrs]
 
-        num_lr = len(self.base_lrs)
-        steps = num_lr / self.num_epochs
-        cur_step = 1
-        lrs = []
-        lrs.append(self.base_lrs[0])
-        for i in range(1, num_lr):
-            if cur_step == steps:
-                cur_step = 1
-                lrs.append(lrs[i - 1] * 1.01)
-            else:
-                cur_step += 1
-                lrs.append(lrs[i - 1])
-        return lrs
+        '''Didn't work'''
+        # num_lr = len(self.base_lrs)
+        # steps = num_lr / self.num_epochs
+        # cur_step = 1
+        # lrs = []
+        # lrs.append(self.base_lrs[0])
+        # for i in range(1, num_lr):
+        #     if cur_step == steps:
+        #         cur_step = 1
+        #         lrs.append(lrs[i - 1] * 1.01)
+        #     else:
+        #         cur_step += 1
+        #         lrs.append(lrs[i - 1])
+        # return lrs
 
         # return [0.05, 0.01, 0.001, 0.01, 0.02, 0.03]
