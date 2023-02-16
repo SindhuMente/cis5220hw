@@ -19,9 +19,9 @@ class CONFIG:
     # initial_weight_decay = 0
 
     batch_size = 64
-    num_epochs = 6
+    num_epochs = 3
     initial_learning_rate = 0.05
-    initial_weight_decay = 0.0001
+    initial_weight_decay = 0
 
     # You can pass arguments to the learning rate scheduler
     # constructor here.
