@@ -14,8 +14,8 @@ class CONFIG:
 
     """config 1"""
     batch_size = 64
-    num_epochs = 10
-    initial_learning_rate = 0.01
+    num_epochs = 6
+    initial_learning_rate = 0.005
     initial_weight_decay = initial_learning_rate / num_epochs
 
     # You can pass arguments to the learning rate scheduler
