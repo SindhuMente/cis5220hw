@@ -25,12 +25,12 @@ class CustomLRScheduler(_LRScheduler):
 
         """
         # ... Your Code
-        super(CustomLRScheduler, self).__init__(optimizer, last_epoch)
         self.optimizer = optimizer
         self.batch_size = batch_size
         self.num_epochs = num_epochs
         self.initial_learning_rate = initial_learning_rate
         self.initial_weight_decay = initial_weight_decay
+        super(CustomLRScheduler, self).__init__(optimizer, last_epoch)
 
     def get_lr(self) -> List[float]:
         # Note to students: You CANNOT change the arguments or return type of
@@ -43,7 +43,18 @@ class CustomLRScheduler(_LRScheduler):
         # return [i for i in self.base_lrs]
 
         """config 1"""
-        return [i - (i - 1) * 0.0001 for i in self.base_lrs]
+        # return [i - (i - 1) * 0.0001 for i in self.base_lrs]
+
+        """config 2"""
+        # return [i - (i - 1) * 0.0001 for i in self.base_lrs]
+
+        num_lr = len(self.base_lrs)
+        steps = int(num_lr / self.num_epochs)
+        return [
+            (self.initial_learning_rate / (1 + self.initial_weight_decay * e))
+            for e in range(1, self.num_epochs + 1)
+            for i in range(steps)
+        ]
 
         """Didn't work"""
         # num_lr = len(self.base_lrs)
