@@ -48,6 +48,7 @@ class CustomLRScheduler(_LRScheduler):
         """config 2"""
         # return [i - (i - 1) * 0.0001 for i in self.base_lrs]
 
+        
         num_lr = len(self.base_lrs)
         steps = int(num_lr / self.num_epochs)
         return [
@@ -55,6 +56,8 @@ class CustomLRScheduler(_LRScheduler):
             for e in range(1, self.num_epochs + 1)
             for i in range(steps)
         ]
+        
+
 
         """Didn't work"""
         # num_lr = len(self.base_lrs)
